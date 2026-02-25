@@ -35,7 +35,7 @@ class _HeroSectionState extends State<HeroSection>
       parent: _slideController,
       curve: Curves.easeOut,
     ));
-    
+
     Future.delayed(const Duration(milliseconds: 200), () {
       _slideController.forward();
     });
@@ -77,7 +77,8 @@ class _HeroSectionState extends State<HeroSection>
                     errorBuilder: (context, error, stackTrace) {
                       return Container(
                         height: isDesktop ? 140 : (isTablet ? 120 : 100),
-                        padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 32, vertical: 16),
                         decoration: BoxDecoration(
                           color: Theme.of(context).colorScheme.primary,
                           borderRadius: BorderRadius.circular(16),
@@ -96,54 +97,50 @@ class _HeroSectionState extends State<HeroSection>
                     },
                   ),
                 ),
-                
                 Text(
                   'Engineering Excellence & Innovation',
                   style: Theme.of(context).textTheme.displayMedium?.copyWith(
-                    color: Theme.of(context).colorScheme.primary,
-                    fontWeight: FontWeight.w600,
-                    fontSize: isDesktop ? 48 : (isTablet ? 36 : 28),
-                  ),
+                        color: Theme.of(context).colorScheme.primary,
+                        fontWeight: FontWeight.w600,
+                        fontSize: isDesktop ? 48 : (isTablet ? 36 : 28),
+                      ),
                   textAlign: TextAlign.center,
                 ),
-                
                 const SizedBox(height: 16),
-                
                 Container(
                   constraints: const BoxConstraints(maxWidth: 600),
                   child: Text(
                     'AUM Projects where innovation meets implementation',
                     style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                      color: Theme.of(context).colorScheme.onSurface.withOpacity(0.8),
-                      height: 1.6,
-                      fontSize: isDesktop ? 18 : 16,
-                    ),
+                          color: Theme.of(context)
+                              .colorScheme
+                              .onSurface
+                              .withOpacity(0.8),
+                          height: 1.6,
+                          fontSize: isDesktop ? 18 : 16,
+                        ),
                     textAlign: TextAlign.center,
                   ),
                 ),
-                
                 const SizedBox(height: 48),
-                
                 Wrap(
                   spacing: 24,
                   runSpacing: 16,
                   alignment: WrapAlignment.center,
                   children: [
                     _ProfessionalCTAButton(
-                      text: 'Submit Report',
+                      text: 'Submit Report or Presentation',
                       isPrimary: true,
                       icon: Icons.assignment_outlined,
                       onPressed: () => _launchURL(
-                        'https://docs.google.com/forms/d/e/1FAIpQLSd1t26TzmKwej9u4xp_KJYw5VkdvbhRyYSLPxednSxg4ePaOw/viewform?usp=header'
-                      ),
+                          'https://docs.google.com/forms/d/e/1FAIpQLSd1t26TzmKwej9u4xp_KJYw5VkdvbhRyYSLPxednSxg4ePaOw/viewform?usp=header'),
                     ),
                     _ProfessionalCTAButton(
                       text: 'Submit Prototype',
                       isPrimary: false,
                       icon: Icons.science_outlined,
                       onPressed: () => _launchURL(
-                        'https://docs.google.com/forms/d/e/1FAIpQLSchJ3Vve79v_xi46mOPwh0stv_tUVGLDx4l1QU8QN22DMflUA/viewform?usp=header'
-                      ),
+                          'https://docs.google.com/forms/d/e/1FAIpQLSchJ3Vve79v_xi46mOPwh0stv_tUVGLDx4l1QU8QN22DMflUA/viewform?usp=header'),
                     ),
                   ],
                 ),
@@ -239,7 +236,10 @@ class _ProfessionalCTAButtonState extends State<_ProfessionalCTAButton>
                       label: Text(widget.text),
                       style: ElevatedButton.styleFrom(
                         elevation: _elevationAnimation.value,
-                        shadowColor: Theme.of(context).colorScheme.primary.withOpacity(0.4),
+                        shadowColor: Theme.of(context)
+                            .colorScheme
+                            .primary
+                            .withOpacity(0.4),
                       ),
                     )
                   : OutlinedButton.icon(
@@ -247,9 +247,12 @@ class _ProfessionalCTAButtonState extends State<_ProfessionalCTAButton>
                       icon: Icon(widget.icon, size: 20),
                       label: Text(widget.text),
                       style: OutlinedButton.styleFrom(
-                        backgroundColor: _isHovered 
-                          ? Theme.of(context).colorScheme.primary.withOpacity(0.05)
-                          : Colors.transparent,
+                        backgroundColor: _isHovered
+                            ? Theme.of(context)
+                                .colorScheme
+                                .primary
+                                .withOpacity(0.05)
+                            : Colors.transparent,
                       ),
                     ),
             ),

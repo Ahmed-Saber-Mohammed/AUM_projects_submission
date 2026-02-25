@@ -203,7 +203,7 @@ class HomePage extends StatelessWidget {
       children: [
         _buildActionCard(
           context,
-          title: 'Submit Report',
+          title: 'Submit Report or Presentation',
           description: 'Share your research findings and project documentation',
           icon: Icons.description_outlined,
           gradient: const LinearGradient(
